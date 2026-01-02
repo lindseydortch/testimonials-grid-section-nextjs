@@ -1,14 +1,17 @@
 // COLORS
-$black: #1c232b;
-$grey: #6c7289;
-$cream: #f2eae2;
+$black: #121212;
 $white: #ffffff;
-$green500: #3d8168;
-$green700: #1a4032;
+$darkBlue: #19202d;
+$grey100: #e7eaee;
+$grey200: #cfcfcf;
+$grey400: #676d7e;
+$grey500: #48556a;
+$purple50: #ede4ff;
+$purple300: #a775f1;
+$purple500: #733fc8;
 
 // FONTS
-$fraunces: "Fraunces", serif;
-$montserrat: "Montserrat", sans-serif;
+$barlow: "Barlow Semi Condensed", sans-serif;
 
 // SPACING
 $spacing-xl: 4rem;
@@ -23,36 +26,34 @@ $bp-mobile: 23.4375em; // 375px
 
 // MIXINS
 @mixin textPreset(
-  $fontWeight,
-  $fontSize,
+  $fontWeight: 600,
+  $fontSize: 0,
   $lineHeight: 100%,
-  $letterSpacing: 0,
   $color: $black
 ) {
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
-  letter-spacing: $letterSpacing;
   color: $color;
 }
 
 @mixin textPreset1($color) {
-  font-family: $fraunces;
-  @include textPreset(700, 3.2rem, _, _, $color);
+  @include textPreset(
+    $color: $color,
+    $fontWeight: 700,
+    $fontSize: 2rem,
+    $lineHeight: 120%
+  );
 }
 
 @mixin textPreset2($color) {
-  @include textPreset(700, 1.4rem, 110%, _, $color);
+  @include textPreset($color: $color, $fontSize: 1.3rem, $lineHeight: 110%);
 }
 
 @mixin textPreset3($color) {
-  @include textPreset(500, 1.4rem, 160%, _, $color);
+  @include textPreset($color: $color, $fontSize: 1.3rem, $lineHeight: 140%);
 }
 
 @mixin textPreset4($color) {
-  @include textPreset(500, 1.2rem, 120%, 0.05rem, $color);
-}
-
-@mixin textPreset5($color) {
-  @include textPreset(500, 1.3rem, 120%, _, $color);
+  @include textPreset($color: $color, $fontSize: 1.1rem, $lineHeight: 110%);
 }

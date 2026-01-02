@@ -1,13 +1,9 @@
-import { Fraunces, Montserrat } from "next/font/google";
+import { Barlow_Semi_Condensed } from "next/font/google";
 import "@/app/_styles/globals.scss";
 import Attribution from "@/app/_components/attribution/Attribution";
 
-const fraunces = Fraunces({
-  weight: ["700"]
-});
-
-const montserrat = Montserrat({
-  weight: ["500", "700"]
+const barlow = Barlow_Semi_Condensed({
+  weight: ["500", "600"]
 });
 
 export const metadata = {
@@ -24,7 +20,7 @@ export default function RootLayout({ children }) {
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>"
         />
       </head>
-      <body className={`${(fraunces.variable, montserrat.variable)}`}>
+      <body className={`${barlow.variable}`}>
         <main>{children}</main>
         <footer>
           <Attribution />
